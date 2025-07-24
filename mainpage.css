@@ -1,4 +1,46 @@
+/* Add gold top lines to dark sections */
+.team-section::before,
+.rehearsal-section::before,
+.join-section::before, 
+.social-section::before,
+.event-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  z-index: 1;
+}
 
+/* Positioning adjustments */
+.team-section {
+  position: relative;
+  padding-top: 83px; /* Original padding + line height */
+}
+
+.rehearsal-section {
+  position: relative;
+  padding-top: 83px;
+}
+
+.join-section {
+  position: relative;
+  padding-top: 123px; /* Original padding + line height */
+}
+
+.footer-section {
+  position: relative;
+  padding-top: 43px; /* Original padding + line height */
+}
+
+/* Remove existing footer top border */
+footer {
+  border-top: none;
+}
+
+/* Existing styles below */
 #hero-slider {
   position: relative;
   overflow: hidden;
@@ -43,10 +85,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end; /* Changed to flex-end to position content lower */
+  justify-content: center;
   height: 100%;
   width: 100%;
-  padding-bottom: 20px; /* Added padding to push content down */
 }
 
 .hero-title {
@@ -125,7 +166,7 @@ footer {
   background-color: var(--black);
   padding: 40px 0 20px;
   text-align: center;
-  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  /* border-top: 1px solid rgba(212, 175, 55, 0.2); */ /* Removed */
 }
 
 .social-icons {
@@ -303,15 +344,6 @@ footer {
   overflow: hidden;
 }
 
-.event-highlight:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-}
 
 .event-label {
   font-size: 1.1rem;
